@@ -34,9 +34,7 @@ class lyrics_typing:
 model = lyrics_typing(93, 'lyrics.txt', 'test.wav')
 
 lyrics = model.read_file()
-model.play_sound()
 typing_thread = threading.Thread(target=model.typing, args=(lyrics,))
 typing_thread.start()
 model.play_sound()
-
 typing_thread.join()
